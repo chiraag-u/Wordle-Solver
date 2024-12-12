@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.noSelect {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.noSelect:focus {
+    outline: none !important;
+}
+
+#Main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+nav {
+    width: 100%;
+    border-bottom: .4vh solid #DDD;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 3.5vh;
+    margin: 2vh 0 0 0;
+    user-select: none;
+}
+
+h2 {
+    user-select: none;
+    margin: 0 0 2vh 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 2vh;
+}
+
+#Container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+
+#Container div {
+    height: 9vh;
+    margin: 1vh;
+    aspect-ratio: 1/1;
+    border: .43vh solid #DDD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .5s, border-color 0.5s, color 0.5s;
+}
+
+
+@media only screen and (max-width: 500px) {
+    #Container div {
+        height: 12vw !important;
+        border-width: 0.53vw !important;
+    }
+
+    #Container div p {
+        font-size: 8vw !important;
+    }
+
+    #Suggest {
+        margin-top: 5vw !important;
+        padding: 1vw !important;
+        border-width: .6vw !important;
+        font-size: 5vw !important;
+    }
+
+    nav {
+        border-bottom-width: .6vw !important;
+    }
+
+    h1 {
+        font-size: 5vw !important;
+        margin: 3vw 0 0 0 !important;
+    }
+
+    h2 {
+        margin: 0 0 3vw 0 !important;
+        font-size: 2.9vw !important;
+    }
+
+    #MenuButton {
+        left: 5.5vw !important;
+    }
+
+    #MenuButton svg {
+        width: 6.5vw !important;
+        height: 6.5vw !important;
+    }
+
+
+    h4,
+    h5 {
+        font-size: 3.2vw !important;
+    }
+    
+    .popup {
+        margin: 15vw auto !important;
+        padding: 2.5vw !important;
+        width: 90vw !important;
+    }
+    
+    .popup .close {
+        top: .5vw !important;
+        right: 2.5vw !important;
+        font-size: 8vw !important;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+    .popup {
+        height: 60vh;
+    }
+}
+
+#Container div p {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 6vh;
+    text-transform: uppercase;
+    font-weight: 600;
+    user-select: none;
+}
+
+div[Click="true"]:hover {
+    cursor: pointer;
+}
+
+div[Color="Gray"] {
+    background-color: #787c7e;
+    border-color: #787c7e !important;
+    color: white;
+}
+
+div[Color="Green"] {
+    background-color: #6aaa64;
+    border-color: #6aaa64 !important;
+    color: white;
+}
+
+div[Color="Yellow"] {
+    background-color: #c9b458;
+    border-color: #c9b458 !important;
+    color: white;
+}
+
+#Suggest {
+    width: 50%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 3vh;
+    padding: 1vh;
+    border: .4vh solid black;
+    font-size: 3vh;
+    background-color: white;
+    border-radius: 100em;
+    cursor: pointer;
+    transition: background-color .5s, color .5s;
+}
+
+#Suggest:hover {
+    background-color: black;
+    color: white;
+}
+
+
+
+
+
+#MenuButton {
+    position: absolute;
+    left: 5vh;
+    cursor: pointer;
+}
+
+#MenuButton svg {
+    width: 5vh;
+    height: 5vh;
+    transition: fill 0.5s;
+}
+
+#MenuButton svg:hover {
+    fill: black;
+}
+
+
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: opacity 200ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay .cancel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+h4,
+h5 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2vh;
+}
+
+h4 {
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+h5 {
+    margin-top: 0;
+    font-weight: 400;
+}
+
+.popup {
+    margin: 10vh auto;
+    padding: 2vh;
+    background: #fff;
+    width: 70vh;
+    border-radius: 7px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.popup .close {
+    position: absolute;
+    top: .5vh;
+    right: 2vh;
+    transition: color .5s;
+    user-select: none;
+    font-size: 5vh;
+    font-weight: bold;
+    text-decoration: none;
+    color: #666;
+}
+
+.popup .close:hover {
+    color: black;
+}
+
+.popup .content {
+    max-height: 80vh;
+    overflow: auto;
+}
+
+.popup .content ::-webkit-scrollbar {
+    display: none;
+}
+
+.popup a{
+    color: black;
+}
+
+.popup .content {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+::-moz-selection {
+    color: white;
+    background: black;
+}
+
+::selection {
+    color: white;
+    background: black;
+}
