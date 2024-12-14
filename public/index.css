@@ -121,7 +121,12 @@ h2 {
         left: 5.5vw !important;
     }
 
-    #MenuButton svg {
+    #Possible {
+        right: 5.5vw !important;
+    }
+
+    #MenuButton svg,
+    #Possible svg {
         width: 6.5vw !important;
         height: 6.5vw !important;
     }
@@ -131,13 +136,13 @@ h2 {
     h5 {
         font-size: 3.2vw !important;
     }
-    
+
     .popup {
         margin: 15vw auto !important;
         padding: 2.5vw !important;
         width: 90vw !important;
     }
-    
+
     .popup .close {
         top: .5vw !important;
         right: 2.5vw !important;
@@ -205,8 +210,12 @@ div[Color="Yellow"] {
 }
 
 
-
-
+#Possible {
+    right: 5vh;
+    position: absolute;
+    cursor: pointer;
+    display: none;
+}
 
 #MenuButton {
     position: absolute;
@@ -214,13 +223,15 @@ div[Color="Yellow"] {
     cursor: pointer;
 }
 
-#MenuButton svg {
+#MenuButton svg,
+#Possible svg {
     width: 5vh;
     height: 5vh;
     transition: fill 0.5s;
 }
 
-#MenuButton svg:hover {
+#MenuButton svg:hover,
+#Possible svg:hover {
     fill: black;
 }
 
@@ -302,7 +313,7 @@ h5 {
     display: none;
 }
 
-.popup a{
+.popup a {
     color: black;
 }
 

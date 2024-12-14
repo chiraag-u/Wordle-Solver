@@ -26,8 +26,7 @@ function Eliminate(Yellow, Green, Gray) {
             if (!Words.includes(YellowLetter)) {
                 delete UpdatedList[Words]
             } else {
-                if (Words[Yellow[i][0]-1] == YellowLetter) {
-                    console.log("warn")
+                if (Words[Yellow[i][0] - 1] == YellowLetter) {
                     delete UpdatedList[Words]
                 }
             }
@@ -104,6 +103,10 @@ document.getElementById("Suggest").addEventListener("click", function () {
         Eliminate(Yellow, Green, Gray)
         let Suggestion = MostUncommon()
         if (Suggestion) {
+            if (ActiveRow == 6) {
+                document.getElementById("Possible").style.display = "block"
+                document.getElementById("Add").textContent = Object.keys(UpdatedList).map(Each => Each.toUpperCase()).join("<br>")
+            }
             Suggestion = Suggestion.split("")
             let Run = 0
             for (let i = (ActiveRow - 1) * 5 + 1; i < (ActiveRow * 5) + 1; i++) {
