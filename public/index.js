@@ -106,6 +106,9 @@ document.getElementById("Suggest").addEventListener("click", function () {
             if (ActiveRow == 6) {
                 document.getElementById("Possible").style.display = "block"
                 document.getElementById("Add").innerHTML = Object.keys(UpdatedList).map(Each => Each.toUpperCase()).join("<br>")
+            } else if (Object.keys(UpdatedList).length <= 10){
+                document.getElementById("Possible").style.display = "block"
+                document.getElementById("Add").innerHTML = Object.keys(UpdatedList).map(Each => Each.toUpperCase()).join("<br>")
             }
             Suggestion = Suggestion.split("")
             let Run = 0
